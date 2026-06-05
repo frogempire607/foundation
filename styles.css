@@ -156,7 +156,7 @@ img { max-width: 100%; display: block; }
   color: var(--ink);
 }
 
-.nav-logo img { height: 42px; width: 42px; object-fit: contain; }
+.nav-logo img { height: 54px; width: 54px; object-fit: contain; }
 .nav-logo .text-red { color: var(--red); }
 
 .nav-links {
@@ -220,7 +220,7 @@ img { max-width: 100%; display: block; }
   .nav-toggle { display: inline-flex; }
   .nav-links {
     position: fixed;
-    top: 68px; left: 0; right: 0;
+    top: 78px; left: 0; right: 0;
     background: var(--bg);
     flex-direction: column;
     align-items: stretch;
