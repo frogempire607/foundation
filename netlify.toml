@@ -1,0 +1,71 @@
+# ============================================================================
+# Frog Empire Foundation — Netlify configuration
+# Performance (caching), security headers, and SEO-friendly behavior.
+# ============================================================================
+
+[build]
+  publish = "."
+
+# ---- Long-cache immutable static assets (images, css, js) ----
+# Safe because these are content-addressed by deploy; bust by renaming on change.
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.css"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.js"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# ---- HTML: always revalidate so content edits go live immediately ----
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+# ---- Security + best-practice headers (applied site-wide) ----
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "geolocation=(), microphone=(), camera=()"
+    X-XSS-Protection = "1; mode=block"
+
+# ---- Pretty URLs: let /about resolve to /about.html (no broken links;
+#      existing .html links keep working too) ----
+[[redirects]]
+  from = "/about"
+  to = "/about.html"
+  status = 200
+[[redirects]]
+  from = "/programs"
+  to = "/programs.html"
+  status = 200
+[[redirects]]
+  from = "/events"
+  to = "/events.html"
+  status = 200
+[[redirects]]
+  from = "/sponsor"
+  to = "/sponsor.html"
+  status = 200
+[[redirects]]
+  from = "/get-involved"
+  to = "/get-involved.html"
+  status = 200
+[[redirects]]
+  from = "/contact"
+  to = "/contact.html"
+  status = 200
+[[redirects]]
+  from = "/donate"
+  to = "/sponsor.html#donate"
+  status = 301
