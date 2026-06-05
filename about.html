@@ -73,6 +73,8 @@
 </head>
 <body>
 
+
+<a class="skip-link" href="#main">Skip to main content</a>
 <!-- ===== NAV ===== -->
 <nav class="nav">
   <div class="nav-inner">
@@ -80,8 +82,8 @@
       <img src="images/logo-outline.png" alt="Frog Empire Foundation">
       <span>FROG <span class="text-red">EMPIRE</span> FOUNDATION</span>
     </a>
-    <button class="nav-toggle" aria-label="Menu">☰</button>
-    <ul class="nav-links">
+    <button class="nav-toggle" aria-label="Toggle navigation menu" aria-controls="primary-nav" aria-expanded="false">☰</button>
+    <ul class="nav-links" id="primary-nav">
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html" class="active">About</a></li>
       <li><a href="programs.html">Programs</a></li>
@@ -95,7 +97,7 @@
 </nav>
 
 <!-- ===== PAGE HEADER ===== -->
-<section class="page-header">
+<section class="page-header" id="main" tabindex="-1">
   <div class="page-header-inner">
     <div class="eyebrow">About The Foundation</div>
     <h1 class="h-display">We don't<br>make <span class="text-red">excuses.</span><br>We make <span class="stroke">wrestlers.</span></h1>
@@ -120,7 +122,7 @@
       </p>
     </div>
     <div class="split-visual">
-      <img src="images/clinic.jpg" alt="Julian Ramirez demonstrating a wrestling technique to young athletes">
+      <img src="images/clinic.jpg" alt="Julian Ramirez demonstrating a wrestling technique to young athletes" width="1600" height="1066" loading="lazy" decoding="async">
     </div>
   </div>
 </section>
@@ -166,7 +168,7 @@
   <div class="team-grid">
     <a href="mailto:jramirez@frogempire607.com" class="team-card" style="text-decoration: none; color: inherit; display: block;">
       <div class="team-photo">
-        <img src="images/julian-headshot.jpg" alt="Julian Ramirez — Founder & President, Frog Empire Foundation">
+        <img src="images/julian-headshot.jpg" alt="Julian Ramirez — Founder & President, Frog Empire Foundation" width="1600" height="1067" loading="lazy" decoding="async">
       </div>
       <div class="team-info">
         <div class="team-name">Julian Ramirez</div>
@@ -178,7 +180,7 @@
 
     <a href="mailto:sjones@frogempire607.com" class="team-card" style="text-decoration: none; color: inherit; display: block;">
       <div class="team-photo">
-        <img src="images/sal-headshot.jpg" alt="Sal — Associate Head Coach & Program Lead, Frog Empire Foundation">
+        <img src="images/sal-headshot.jpg" alt="Sal — Associate Head Coach & Program Lead, Frog Empire Foundation" width="1600" height="1067" loading="lazy" decoding="async">
       </div>
       <div class="team-info">
         <div class="team-name">Sal</div>

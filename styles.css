@@ -1078,10 +1078,28 @@ select {
    SCROLL REVEAL
    ======================================================================== */
 
-.reveal {
+/* Progressive enhancement: only hide for the reveal animation when JS is
+   present (html.js is set by main.js). Without JS, content stays visible —
+   important for crawlers, no-JS users, and resilience. */
+.js .reveal {
   opacity: 0;
   transform: translateY(24px);
   transition: opacity var(--dur-3) var(--ease), transform var(--dur-3) var(--ease);
   will-change: opacity, transform;
 }
-.reveal.in { opacity: 1; transform: translateY(0); }
+.js .reveal.in { opacity: 1; transform: translateY(0); }
+
+/* Skip-to-content link (keyboard / screen-reader accessibility) */
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 0;
+  z-index: 1000;
+  background: var(--red);
+  color: #fff;
+  padding: 0.75rem 1.25rem;
+  border-radius: 0 0 var(--radius-sm) 0;
+  font-weight: 700;
+  text-decoration: none;
+}
+.skip-link:focus { left: 0; }

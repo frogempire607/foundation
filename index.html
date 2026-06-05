@@ -118,6 +118,8 @@
 </head>
 <body>
 
+
+<a class="skip-link" href="#main">Skip to main content</a>
 <!-- ===== NAV ===== -->
 <nav class="nav">
   <div class="nav-inner">
@@ -125,8 +127,8 @@
       <img src="images/logo-outline.png" alt="Frog Empire Foundation">
       <span>FROG <span class="text-red">EMPIRE</span> FOUNDATION</span>
     </a>
-    <button class="nav-toggle" aria-label="Menu">☰</button>
-    <ul class="nav-links">
+    <button class="nav-toggle" aria-label="Toggle navigation menu" aria-controls="primary-nav" aria-expanded="false">☰</button>
+    <ul class="nav-links" id="primary-nav">
       <li><a href="index.html" class="active">Home</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="programs.html">Programs</a></li>
@@ -140,7 +142,7 @@
 </nav>
 
 <!-- ===== HERO ===== -->
-<section class="hero">
+<section class="hero" id="main" tabindex="-1">
   <div class="hero-inner">
     <div>
       <div class="eyebrow">501(c)(3) Nonprofit · Ithaca, NY</div>
@@ -159,7 +161,7 @@
       </div>
     </div>
     <div class="hero-visual">
-      <img src="images/logo-bg-bc.png" alt="Frog Empire Foundation Logo">
+      <img src="images/logo-bg-bc.png" alt="Frog Empire Foundation logo" width="721" height="767" fetchpriority="high" decoding="async">
     </div>
   </div>
 </section>
@@ -193,7 +195,7 @@
       <a href="about.html" class="btn btn-ghost">Read Our Story</a>
     </div>
     <div class="split-visual">
-      <img src="images/hero.jpg" alt="Young wrestlers sprinting across the mat at Frog Empire Wrestling Academy">
+      <img src="images/hero.jpg" alt="Young wrestlers sprinting across the mat at Frog Empire Wrestling Academy" width="1600" height="1067" loading="lazy" decoding="async">
     </div>
   </div>
 </section>
@@ -270,7 +272,7 @@
         <a href="about.html" class="btn btn-ghost">Meet The Team</a>
       </div>
       <div class="split-visual">
-        <img src="images/scholarship.jpg" alt="Julian Ramirez with athletes at a wrestling event">
+        <img src="images/scholarship.jpg" alt="Julian Ramirez with athletes at a wrestling event" width="1200" height="1600" loading="lazy" decoding="async">
       </div>
     </div>
   </div>

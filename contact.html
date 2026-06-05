@@ -79,14 +79,16 @@
 </head>
 <body>
 
+
+<a class="skip-link" href="#main">Skip to main content</a>
 <nav class="nav">
   <div class="nav-inner">
     <a href="index.html" class="nav-logo">
       <img src="images/logo-outline.png" alt="Frog Empire Foundation">
       <span>FROG <span class="text-red">EMPIRE</span> FOUNDATION</span>
     </a>
-    <button class="nav-toggle" aria-label="Menu">☰</button>
-    <ul class="nav-links">
+    <button class="nav-toggle" aria-label="Toggle navigation menu" aria-controls="primary-nav" aria-expanded="false">☰</button>
+    <ul class="nav-links" id="primary-nav">
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="programs.html">Programs</a></li>
@@ -99,7 +101,7 @@
   </div>
 </nav>
 
-<section class="page-header">
+<section class="page-header" id="main" tabindex="-1">
   <div class="page-header-inner">
     <div class="eyebrow">Contact</div>
     <h1 class="h-display">Let's <span class="text-red">talk</span>.</h1>

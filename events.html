@@ -337,14 +337,16 @@
 </head>
 <body>
 
+
+<a class="skip-link" href="#main">Skip to main content</a>
 <nav class="nav">
   <div class="nav-inner">
     <a href="index.html" class="nav-logo">
       <img src="images/logo-outline.png" alt="Frog Empire Foundation">
       <span>FROG <span class="text-red">EMPIRE</span> FOUNDATION</span>
     </a>
-    <button class="nav-toggle" aria-label="Menu">☰</button>
-    <ul class="nav-links">
+    <button class="nav-toggle" aria-label="Toggle navigation menu" aria-controls="primary-nav" aria-expanded="false">☰</button>
+    <ul class="nav-links" id="primary-nav">
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="programs.html">Programs</a></li>
@@ -357,7 +359,7 @@
   </div>
 </nav>
 
-<section class="page-header">
+<section class="page-header" id="main" tabindex="-1">
   <div class="page-header-inner">
     <div class="eyebrow">Events</div>
     <h1 class="h-display">See us<br>on the <span class="text-red">mat</span>.</h1>
@@ -441,7 +443,7 @@
           <div class="event-meta-row"><span class="event-meta-icon">🕐</span><span>April 25th</span></div>
           <div class="event-meta-row"><span class="event-meta-icon">🎟️</span><span>All levels welcome</span></div>
         </div>
-        <p class="event-description">Designed to support athletes of all abilities, including those with autism and special needs.</p>
+        <p class="event-description">Designed to support athletes of all abilities, including those with autism and special needs. <a href="autism-inclusive-wrestling-clinic.html" style="color: var(--red);">Learn about our autism-inclusive wrestling clinic →</a></p>
         <button class="event-gallery-toggle">View Photos</button>
         <div class="event-gallery" id="liu-clinic-gallery"></div>
       </div>

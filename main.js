@@ -1,16 +1,19 @@
+// Progressive-enhancement flag: enables the scroll-reveal animation only when
+// JS runs (see .js .reveal in styles.css). Without it, content stays visible.
+document.documentElement.classList.add('js');
+
 // Mobile nav toggle
 const toggle = document.querySelector('.nav-toggle');
 const links = document.querySelector('.nav-links');
 if (toggle && links) {
-  toggle.addEventListener('click', () => {
-    links.classList.toggle('open');
-    toggle.textContent = links.classList.contains('open') ? '✕' : '☰';
-  });
+  const setOpen = (open) => {
+    links.classList.toggle('open', open);
+    toggle.textContent = open ? '✕' : '☰';
+    toggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  };
+  toggle.addEventListener('click', () => setOpen(!links.classList.contains('open')));
   links.querySelectorAll('a').forEach(a => {
-    a.addEventListener('click', () => {
-      links.classList.remove('open');
-      toggle.textContent = '☰';
-    });
+    a.addEventListener('click', () => setOpen(false));
   });
 }
 
