@@ -32,7 +32,7 @@
     color: var(--gray);
     padding: 0.75rem 0;
     margin-bottom: 0.75rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    border-bottom: 1px solid var(--line);
   }
   .tier-includes span { color: var(--tier-color, var(--red)); font-weight: bold; }
 
@@ -45,7 +45,7 @@
     margin-top: 0.5rem;
     margin-bottom: 0.5rem;
     padding-bottom: 0.5rem;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    border-bottom: 1px solid var(--line);
   }
 </style>
 </head>
@@ -93,19 +93,19 @@
     </p>
 
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 1rem; margin: 3rem 0;">
-      <div style="background: var(--black-card); border: 1px solid var(--gray-dark); padding: 1.5rem 1rem; text-align: center;">
+      <div style="background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-sm); box-shadow: var(--shadow-xs); padding: 1.75rem 1rem; text-align: center;">
         <div style="font-family: var(--font-display); font-size: 2.5rem; color: var(--red);">$25</div>
         <div style="font-family: var(--font-accent); font-size: 0.85rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray);">Wrestling Shoes</div>
       </div>
-      <div style="background: var(--black-card); border: 1px solid var(--gray-dark); padding: 1.5rem 1rem; text-align: center;">
+      <div style="background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-sm); box-shadow: var(--shadow-xs); padding: 1.75rem 1rem; text-align: center;">
         <div style="font-family: var(--font-display); font-size: 2.5rem; color: var(--red);">$50</div>
         <div style="font-family: var(--font-accent); font-size: 0.85rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray);">Tournament Entry</div>
       </div>
-      <div style="background: var(--black-card); border: 1px solid var(--gray-dark); padding: 1.5rem 1rem; text-align: center;">
+      <div style="background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-sm); box-shadow: var(--shadow-xs); padding: 1.75rem 1rem; text-align: center;">
         <div style="font-family: var(--font-display); font-size: 2.5rem; color: var(--red);">$100</div>
         <div style="font-family: var(--font-accent); font-size: 0.85rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray);">Full Gear Kit</div>
       </div>
-      <div style="background: var(--black-card); border: 1px solid var(--gray-dark); padding: 1.5rem 1rem; text-align: center;">
+      <div style="background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius-sm); box-shadow: var(--shadow-xs); padding: 1.75rem 1rem; text-align: center;">
         <div style="font-family: var(--font-display); font-size: 2.5rem; color: var(--red);">$200</div>
         <div style="font-family: var(--font-accent); font-size: 0.85rem; letter-spacing: 0.15em; text-transform: uppercase; color: var(--gray);">Month of Training</div>
       </div>
@@ -134,7 +134,7 @@
 
       <!-- BRONZE -->
       <div class="tier tier-bronze">
-        <div style="width: calc(100% + 4rem); margin: -2.5rem -2rem 1.5rem -2rem; background: var(--black); display: flex; align-items: center; justify-content: center; padding: 1.5rem 2rem;">
+        <div style="width: calc(100% + 3.2rem); margin: -1.75rem -1.6rem 1.5rem -1.6rem; background: var(--surface-2); border-bottom: 1px solid var(--line); border-radius: var(--radius) var(--radius) 0 0; display: flex; align-items: center; justify-content: center; padding: 1.5rem 2rem;">
           <img src="images/sponsor/bronze.jpg" alt="Bronze Tier" style="max-height: 160px; width: auto; max-width: 100%; display: block; object-fit: contain;">
         </div>
         <div class="tier-tag">Community Supporter</div>
@@ -151,7 +151,7 @@
 
       <!-- SILVER -->
       <div class="tier tier-silver">
-        <div style="width: calc(100% + 4rem); margin: -2.5rem -2rem 1.5rem -2rem; background: var(--black); display: flex; align-items: center; justify-content: center; padding: 1.5rem 2rem;">
+        <div style="width: calc(100% + 3.2rem); margin: -1.75rem -1.6rem 1.5rem -1.6rem; background: var(--surface-2); border-bottom: 1px solid var(--line); border-radius: var(--radius) var(--radius) 0 0; display: flex; align-items: center; justify-content: center; padding: 1.5rem 2rem;">
           <img src="images/sponsor/silver.jpg" alt="Silver Tier" style="max-height: 160px; width: auto; max-width: 100%; display: block; object-fit: contain;">
         </div>
         <div class="tier-tag">Entry-Level Sponsor</div>
@@ -170,7 +170,7 @@
 
       <!-- GOLD -->
       <div class="tier tier-gold">
-        <div style="width: calc(100% + 4rem); margin: -2.5rem -2rem 1.5rem -2rem; background: var(--black); display: flex; align-items: center; justify-content: center; padding: 1.5rem 2rem;">
+        <div style="width: calc(100% + 3.2rem); margin: -1.75rem -1.6rem 1.5rem -1.6rem; background: var(--surface-2); border-bottom: 1px solid var(--line); border-radius: var(--radius) var(--radius) 0 0; display: flex; align-items: center; justify-content: center; padding: 1.5rem 2rem;">
           <img src="images/sponsor/gold.jpg" alt="Gold Tier" style="max-height: 160px; width: auto; max-width: 100%; display: block; object-fit: contain;">
         </div>
         <div class="tier-tag">Athlete-Level Impact</div>
@@ -190,7 +190,7 @@
 
       <!-- PLATINUM -->
       <div class="tier tier-platinum">
-        <div style="width: calc(100% + 4rem); margin: -2.5rem -2rem 1.5rem -2rem; background: var(--black); display: flex; align-items: center; justify-content: center; padding: 1.5rem 2rem;">
+        <div style="width: calc(100% + 3.2rem); margin: -1.75rem -1.6rem 1.5rem -1.6rem; background: var(--surface-2); border-bottom: 1px solid var(--line); border-radius: var(--radius) var(--radius) 0 0; display: flex; align-items: center; justify-content: center; padding: 1.5rem 2rem;">
           <img src="images/sponsor/platinum.jpg" alt="Platinum Tier" style="max-height: 160px; width: auto; max-width: 100%; display: block; object-fit: contain;">
         </div>
         <div class="tier-tag">Team &amp; Facility Presence</div>
@@ -211,7 +211,7 @@
 
       <!-- FOUNDING PARTNER -->
       <div class="tier tier-founder">
-        <div style="width: calc(100% + 4rem); margin: -2.5rem -2rem 1.5rem -2rem; background: var(--black); display: flex; align-items: center; justify-content: center; padding: 1.5rem 2rem;">
+        <div style="width: calc(100% + 3.2rem); margin: -1.75rem -1.6rem 1.5rem -1.6rem; background: var(--surface-2); border-bottom: 1px solid var(--line); border-radius: var(--radius) var(--radius) 0 0; display: flex; align-items: center; justify-content: center; padding: 1.5rem 2rem;">
           <img src="images/sponsor/founding_sponsor.png" alt="Founding Partner Tier" style="max-height: 160px; width: auto; max-width: 100%; display: block; object-fit: contain;">
         </div>
         <div class="tier-tag">Permanent · Limited Availability</div>
@@ -242,9 +242,9 @@
       Think of it like a pyramid. Bronze is the foundation — and every tier above it adds new visibility and impact while keeping everything you already earned. You never lose a perk; you only gain.
     </p>
 
-    <div style="display: grid; gap: 0; margin-top: 3rem; max-width: 600px; margin-left: auto; margin-right: auto;">
-      <div style="background: var(--red); padding: 1.25rem; text-align: center; font-family: var(--font-display); font-size: 1.3rem; letter-spacing: 0.05em; text-transform: uppercase; border-bottom: 2px solid var(--black);">
-        🔴 Founding Partner — Permanent Legacy
+    <div style="display: grid; gap: 0; margin-top: 3rem; max-width: 600px; margin-left: auto; margin-right: auto; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow-md); border: 1px solid var(--line);">
+      <div style="background: var(--red); color: var(--white); padding: 1.25rem; text-align: center; font-family: var(--font-display); font-weight: 800; font-size: 1.3rem; letter-spacing: 0.02em; text-transform: uppercase;">
+        Founding Partner — Permanent Legacy
       </div>
       <div style="background: #E5E4E2; color: var(--black); padding: 1rem; text-align: center; font-family: var(--font-display); font-size: 1.15rem; letter-spacing: 0.05em; text-transform: uppercase; border-bottom: 2px solid var(--black);">
         Platinum — $2,000/yr
@@ -274,7 +274,7 @@
 
   <div style="background: var(--black-card); border: 1px solid var(--gray-dark); padding: clamp(3rem, 8vw, 5rem) 2rem; text-align: center;">
     <div class="eyebrow" style="justify-content: center; margin-bottom: 1.5rem;">Founding Sponsors</div>
-    <div style="font-family: var(--font-display); font-size: clamp(2.5rem, 6vw, 5rem); color: var(--gray-dark); letter-spacing: 0.12em; text-transform: uppercase; margin-bottom: 1.5rem; line-height: 1;">COMING SOON</div>
+    <div style="font-family: var(--font-display); font-size: clamp(2.5rem, 6vw, 5rem); color: var(--ink-3); letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 1.5rem; line-height: 1; opacity: 0.55;">COMING SOON</div>
     <p style="color: var(--gray); margin-bottom: 2.5rem; max-width: 480px; margin-left: auto; margin-right: auto; font-size: 1.05rem;">Your name or logo could be the first one here. Help us build something lasting for young athletes in Ithaca and beyond.</p>
     <a href="#tiers" class="btn btn-primary">Be One of the First to Support</a>
   </div>

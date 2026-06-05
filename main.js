@@ -14,6 +14,14 @@ if (toggle && links) {
   });
 }
 
+// Nav elevation on scroll
+const navEl = document.querySelector('.nav');
+if (navEl) {
+  const onScroll = () => navEl.classList.toggle('scrolled', window.scrollY > 8);
+  onScroll();
+  window.addEventListener('scroll', onScroll, { passive: true });
+}
+
 // Scroll reveals
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => {
