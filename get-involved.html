@@ -3,21 +3,86 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Get Involved · Frog Empire Foundation</title>
-<meta name="description" content="Volunteer, nominate an athlete, or partner with us. There's a way for everyone to join the mission.">
+<!-- ===== PRIMARY SEO ===== -->
+<title>Get Involved: Volunteer &amp; Nominate an Athlete | Frog Empire</title>
+<meta name="description" content="Volunteer, nominate a young wrestler for support, donate gear, or partner with Frog Empire Foundation in Ithaca, NY. There's a place for everyone on the mat.">
+<link rel="canonical" href="https://frogempirefoundation.org/get-involved.html">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta name="theme-color" content="#b31b1b">
+<meta name="geo.region" content="US-NY">
+<meta name="geo.placename" content="Ithaca, New York">
+
+<!-- ===== OPEN GRAPH / TWITTER ===== -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Frog Empire Foundation">
+<meta property="og:title" content="Get Involved — Volunteer &amp; Nominate an Athlete">
+<meta property="og:description" content="Volunteer, nominate a young wrestler, donate gear, or partner with Frog Empire Foundation in Ithaca, NY.">
+<meta property="og:url" content="https://frogempirefoundation.org/get-involved.html">
+<meta property="og:image" content="https://frogempirefoundation.org/images/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Get Involved — Volunteer &amp; Nominate an Athlete">
+<meta name="twitter:description" content="Volunteer, nominate a wrestler, donate gear, or partner with us in Ithaca, NY.">
+<meta name="twitter:image" content="https://frogempirefoundation.org/images/og-default.jpg">
+
+<!-- ===== ICONS / MANIFEST / FONTS ===== -->
 <link rel="icon" type="image/png" href="images/logo-outline.png">
+<link rel="apple-touch-icon" href="images/logo-circle-red.png">
+<link rel="manifest" href="site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,300..900&display=swap">
 <link rel="stylesheet" href="styles.css">
+
+<!-- ===== STRUCTURED DATA ===== -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": ["NGO", "SportsOrganization"],
+      "@id": "https://frogempirefoundation.org/#organization",
+      "name": "Frog Empire Foundation",
+      "url": "https://frogempirefoundation.org/",
+      "logo": "https://frogempirefoundation.org/images/logo-primary.png",
+      "email": "info@frogempirefoundation.org",
+      "sport": "Wrestling",
+      "nonprofitStatus": "Nonprofit501c3",
+      "address": { "@type": "PostalAddress", "addressLocality": "Ithaca", "addressRegion": "NY", "addressCountry": "US" },
+      "sameAs": ["https://instagram.com/frogempirefoundation", "https://www.frogempire607.com"]
+    },
+    {
+      "@type": "WebPage",
+      "url": "https://frogempirefoundation.org/get-involved.html",
+      "name": "Get Involved — Frog Empire Foundation",
+      "about": { "@id": "https://frogempirefoundation.org/#organization" },
+      "description": "Ways to support young wrestlers in Ithaca, NY: volunteer, nominate an athlete, donate gear, host a fundraiser, or partner with the Foundation."
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://frogempirefoundation.org/" },
+        { "@type": "ListItem", "position": 2, "name": "Get Involved", "item": "https://frogempirefoundation.org/get-involved.html" }
+      ]
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
+
+<a class="skip-link" href="#main">Skip to main content</a>
 <nav class="nav">
   <div class="nav-inner">
     <a href="index.html" class="nav-logo">
       <img src="images/logo-outline.png" alt="Frog Empire Foundation">
       <span>FROG <span class="text-red">EMPIRE</span> FOUNDATION</span>
     </a>
-    <button class="nav-toggle" aria-label="Menu">☰</button>
-    <ul class="nav-links">
+    <button class="nav-toggle" aria-label="Toggle navigation menu" aria-controls="primary-nav" aria-expanded="false">☰</button>
+    <ul class="nav-links" id="primary-nav">
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="programs.html">Programs</a></li>
@@ -30,7 +95,7 @@
   </div>
 </nav>
 
-<section class="page-header">
+<section class="page-header" id="main" tabindex="-1">
   <div class="page-header-inner">
     <div class="eyebrow">Get Involved</div>
     <h1 class="h-display">Step on<br>the <span class="text-red">mat</span><br>with us.</h1>

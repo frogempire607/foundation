@@ -3,13 +3,78 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Frog Empire Foundation — Opportunity Through Wrestling</title>
-<meta name="description" content="Frog Empire Foundation provides scholarships, training, and equipment to young wrestlers — removing barriers so every athlete can compete and grow.">
+<!-- ===== PRIMARY SEO ===== -->
+<title>About Us | Frog Empire Foundation — Our Story &amp; 501(c)(3)</title>
+<meta name="description" content="Meet the wrestlers behind Frog Empire Foundation — a registered 501(c)(3) in Ithaca, NY built to give every young athlete access to wrestling, regardless of background.">
+<link rel="canonical" href="https://frogempirefoundation.org/about.html">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta name="theme-color" content="#b31b1b">
+<meta name="geo.region" content="US-NY">
+<meta name="geo.placename" content="Ithaca, New York">
+
+<!-- ===== OPEN GRAPH / TWITTER ===== -->
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Frog Empire Foundation">
+<meta property="og:title" content="About Frog Empire Foundation — Our Story &amp; 501(c)(3)">
+<meta property="og:description" content="A registered 501(c)(3) in Ithaca, NY built by wrestlers to give every young athlete access to the sport — regardless of background.">
+<meta property="og:url" content="https://frogempirefoundation.org/about.html">
+<meta property="og:image" content="https://frogempirefoundation.org/images/og-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="About Frog Empire Foundation — Our Story &amp; 501(c)(3)">
+<meta name="twitter:description" content="A registered 501(c)(3) in Ithaca, NY built by wrestlers, for wrestlers.">
+<meta name="twitter:image" content="https://frogempirefoundation.org/images/og-default.jpg">
+
+<!-- ===== ICONS / MANIFEST / FONTS ===== -->
 <link rel="icon" type="image/png" href="images/logo-outline.png">
+<link rel="apple-touch-icon" href="images/logo-circle-red.png">
+<link rel="manifest" href="site.webmanifest">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,300..900&display=swap">
 <link rel="stylesheet" href="styles.css">
+
+<!-- ===== STRUCTURED DATA ===== -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": ["NGO", "SportsOrganization"],
+      "@id": "https://frogempirefoundation.org/#organization",
+      "name": "Frog Empire Foundation",
+      "url": "https://frogempirefoundation.org/",
+      "logo": "https://frogempirefoundation.org/images/logo-primary.png",
+      "email": "info@frogempirefoundation.org",
+      "sport": "Wrestling",
+      "nonprofitStatus": "Nonprofit501c3",
+      "address": { "@type": "PostalAddress", "addressLocality": "Ithaca", "addressRegion": "NY", "addressCountry": "US" },
+      "sameAs": ["https://instagram.com/frogempirefoundation", "https://www.frogempire607.com"]
+    },
+    {
+      "@type": "AboutPage",
+      "url": "https://frogempirefoundation.org/about.html",
+      "name": "About Frog Empire Foundation",
+      "about": { "@id": "https://frogempirefoundation.org/#organization" },
+      "description": "The story, team, and 501(c)(3) status of Frog Empire Foundation, a youth wrestling nonprofit in Ithaca, NY."
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://frogempirefoundation.org/" },
+        { "@type": "ListItem", "position": 2, "name": "About", "item": "https://frogempirefoundation.org/about.html" }
+      ]
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
+
+<a class="skip-link" href="#main">Skip to main content</a>
 <!-- ===== NAV ===== -->
 <nav class="nav">
   <div class="nav-inner">
@@ -17,8 +82,8 @@
       <img src="images/logo-outline.png" alt="Frog Empire Foundation">
       <span>FROG <span class="text-red">EMPIRE</span> FOUNDATION</span>
     </a>
-    <button class="nav-toggle" aria-label="Menu">☰</button>
-    <ul class="nav-links">
+    <button class="nav-toggle" aria-label="Toggle navigation menu" aria-controls="primary-nav" aria-expanded="false">☰</button>
+    <ul class="nav-links" id="primary-nav">
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html" class="active">About</a></li>
       <li><a href="programs.html">Programs</a></li>
@@ -32,7 +97,7 @@
 </nav>
 
 <!-- ===== PAGE HEADER ===== -->
-<section class="page-header">
+<section class="page-header" id="main" tabindex="-1">
   <div class="page-header-inner">
     <div class="eyebrow">About The Foundation</div>
     <h1 class="h-display">We don't<br>make <span class="text-red">excuses.</span><br>We make <span class="stroke">wrestlers.</span></h1>
@@ -57,7 +122,7 @@
       </p>
     </div>
     <div class="split-visual">
-      <img src="images/clinic.jpg" alt="Julian Ramirez demonstrating a wrestling technique to young athletes">
+      <img src="images/clinic.jpg" alt="Julian Ramirez demonstrating a wrestling technique to young athletes" width="1600" height="1066" loading="lazy" decoding="async">
     </div>
   </div>
 </section>
@@ -103,7 +168,7 @@
   <div class="team-grid">
     <a href="mailto:jramirez@frogempire607.com" class="team-card" style="text-decoration: none; color: inherit; display: block;">
       <div class="team-photo">
-        <img src="images/julian-headshot.jpg" alt="Julian Ramirez — Founder & President, Frog Empire Foundation">
+        <img src="images/julian-headshot.jpg" alt="Julian Ramirez — Founder & President, Frog Empire Foundation" width="1600" height="1067" loading="lazy" decoding="async">
       </div>
       <div class="team-info">
         <div class="team-name">Julian Ramirez</div>
@@ -115,7 +180,7 @@
 
     <a href="mailto:sjones@frogempire607.com" class="team-card" style="text-decoration: none; color: inherit; display: block;">
       <div class="team-photo">
-        <img src="images/sal-headshot.jpg" alt="Sal — Associate Head Coach & Program Lead, Frog Empire Foundation">
+        <img src="images/sal-headshot.jpg" alt="Sal — Associate Head Coach & Program Lead, Frog Empire Foundation" width="1600" height="1067" loading="lazy" decoding="async">
       </div>
       <div class="team-info">
         <div class="team-name">Sal</div>
