@@ -135,7 +135,9 @@
     </div>
 
     <div>
-      <form action="mailto:info@frogempirefoundation.org" method="post" enctype="text/plain">
+      <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thanks.html">
+        <input type="hidden" name="form-name" value="contact">
+        <p hidden><label>Don't fill this out if you're human: <input name="bot-field"></label></p>
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.25rem;">
           <div class="form-group">
             <label>Name</label>
