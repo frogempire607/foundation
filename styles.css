@@ -221,22 +221,40 @@ img { max-width: 100%; display: block; }
   .nav-toggle { display: inline-flex; }
   .nav-links {
     position: fixed;
-    top: 78px; left: 0; right: 0;
+    top: 80px; left: 0; right: 0;
     background: var(--bg);
     flex-direction: column;
     align-items: stretch;
-    padding: 1rem var(--gutter) 1.5rem;
+    padding: 0.75rem var(--gutter) 1.25rem;
     border-bottom: 1px solid var(--line);
     box-shadow: var(--shadow-lg);
-    gap: 0.15rem;
+    gap: 0;
     transform: translateY(-130%);
     opacity: 0;
     pointer-events: none;
     transition: transform var(--dur-3) var(--ease), opacity var(--dur-2) var(--ease);
   }
   .nav-links.open { transform: translateY(0); opacity: 1; pointer-events: auto; }
-  .nav-links a { padding: 0.85rem 1rem; font-size: 1.05rem; }
-  .nav-donate { text-align: center; margin: 0.5rem 0 0; padding: 0.85rem 1rem !important; }
+  /* Full-width rows with generous tap targets (≥48px) and hairline dividers */
+  .nav-links a {
+    display: flex;
+    align-items: center;
+    min-height: 52px;
+    padding: 0.5rem 0.75rem;
+    font-size: 1.08rem;
+    border-radius: var(--radius-xs);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-links a:last-of-type { border-bottom: none; }
+  /* Donate sits apart as a clear button, not another list row */
+  .nav-donate {
+    justify-content: center;
+    text-align: center;
+    margin: 0.85rem 0 0 !important;
+    min-height: 52px;
+    padding: 0.5rem 1rem !important;
+    border-bottom: none !important;
+  }
 }
 
 /* ========================================================================
@@ -454,8 +472,26 @@ img { max-width: 100%; display: block; }
 }
 
 @media (max-width: 940px) {
-  .hero-inner { grid-template-columns: 1fr; }
-  .hero-visual { order: -1; max-width: 320px; }
+  .hero-inner { grid-template-columns: 1fr; gap: 1.5rem; }
+  /* Stack the logo above the text: let it size to content (no tall square box),
+     keep it compact, and give clear separation so it never overlaps the headline. */
+  .hero-visual {
+    order: -1;
+    aspect-ratio: auto;
+    max-width: 220px;
+    margin: 0 auto 0.5rem;
+  }
+  .hero-inner .hero-visual img {     /* extra specificity to beat the base rule below */
+    width: 100%;
+    max-width: 220px;
+    animation: none;                 /* no float on mobile — avoids overlap */
+    filter: drop-shadow(0 12px 28px rgba(194,27,27,0.18));
+  }
+  .hero-visual::before { display: none; }
+}
+@media (max-width: 460px) {
+  .hero-visual { max-width: 180px; }
+  .hero-inner .hero-visual img { max-width: 180px; }
 }
 
 .hero-title {
