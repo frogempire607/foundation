@@ -464,7 +464,7 @@ img { max-width: 100%; display: block; }
   margin: 0 auto;
   width: 100%;
   display: grid;
-  grid-template-columns: 1.25fr 0.9fr;
+  grid-template-columns: 1fr minmax(300px, 360px);
   gap: clamp(2rem, 5vw, 4.5rem);
   align-items: center;
   position: relative;
@@ -472,26 +472,16 @@ img { max-width: 100%; display: block; }
 }
 
 @media (max-width: 940px) {
-  .hero-inner { grid-template-columns: 1fr; gap: 1.5rem; }
-  /* Stack the logo above the text: let it size to content (no tall square box),
-     keep it compact, and give clear separation so it never overlaps the headline. */
-  .hero-visual {
-    order: -1;
-    aspect-ratio: auto;
-    max-width: 220px;
-    margin: 0 auto 0.5rem;
-  }
-  .hero-inner .hero-visual img {     /* extra specificity to beat the base rule below */
-    width: 100%;
-    max-width: 220px;
-    animation: none;                 /* no float on mobile — avoids overlap */
-    filter: drop-shadow(0 12px 28px rgba(194,27,27,0.18));
-  }
+  .hero-inner { grid-template-columns: 1fr; gap: 1.25rem; }
+  /* Stack a compact, clearly-separated badge above the text so it never
+     overlaps the headline. object-fit:contain (base rule) keeps it circular. */
+  .hero-visual { order: -1; max-width: 200px; margin: 0 auto 0.5rem; }
+  .hero-visual img { max-width: 200px; animation: none; }   /* no float on mobile */
   .hero-visual::before { display: none; }
 }
 @media (max-width: 460px) {
-  .hero-visual { max-width: 180px; }
-  .hero-inner .hero-visual img { max-width: 180px; }
+  .hero-visual,
+  .hero-visual img { max-width: 150px; }
 }
 
 .hero-title {
@@ -528,16 +518,18 @@ img { max-width: 100%; display: block; }
 
 .hero-visual {
   position: relative;
-  aspect-ratio: 1;
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 0 auto;
 }
 .hero-visual img {
-  width: 86%;
-  max-width: 420px;
-  filter: drop-shadow(0 24px 50px rgba(194,27,27,0.22));
+  width: 100%;
+  max-width: 380px;
+  aspect-ratio: 1;          /* square frame */
+  height: auto;
+  object-fit: contain;      /* keep the round badge perfectly circular — never stretch */
+  filter: drop-shadow(0 18px 40px rgba(194,27,27,0.20));
   animation: float 7s var(--ease-soft) infinite;
 }
 .hero-visual::before {
