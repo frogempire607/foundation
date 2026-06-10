@@ -1131,3 +1131,16 @@ select {
   text-decoration: none;
 }
 .skip-link:focus { left: 0; }
+
+/* Netlify honeypot: visually/interactively hidden but NOT display:none, so
+   browser autofill leaves it empty (a filled value = bot → flagged spam). */
+.hidden-honeypot {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  width: 1px;
+  margin: -1px;
+  padding: 0;
+  border: 0;
+}
