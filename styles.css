@@ -217,7 +217,10 @@ img { max-width: 100%; display: block; }
 }
 .nav-toggle:hover { border-color: var(--ink-3); background: var(--surface-2); }
 
-@media (max-width: 940px) {
+/* Raised from 940px when the nav grew to nine items (Empire Series): below
+   this width the bar can no longer hold them on one line, so the menu button
+   takes over instead of letting labels wrap. */
+@media (max-width: 1140px) {
   .nav-toggle { display: inline-flex; }
   .nav-links {
     position: fixed;
@@ -1143,4 +1146,294 @@ select {
   margin: -1px;
   padding: 0;
   border: 0;
+}
+
+/* ========================================================================
+   EMPIRE STATE SERIES
+   The only genuinely new components for the Empire State Wrestling Series
+   pages: session chips, choice (radio/checkbox) cards, the numbered step
+   list, and the form/sidebar shell those four pages share. Everything else
+   on those pages reuses the system above.
+   ======================================================================== */
+
+/* ---- Series hero: the hub page's one dark moment (footer is the other) ---- */
+.series-hero {
+  background: var(--ink-deep);
+  color: var(--white);
+  padding: clamp(8rem, 14vw, 11rem) var(--gutter) clamp(3rem, 6vw, 4.5rem);
+}
+.series-hero-inner { max-width: var(--max-width); margin: 0 auto; }
+.series-hero .h-display { color: var(--white); max-width: 17ch; }
+.series-hero .lead { color: rgba(255,255,255,0.78); max-width: 56ch; }
+.series-hero .eyebrow { color: rgba(255,255,255,0.72); }
+.series-hero .text-red { color: var(--red-bright); }
+
+.series-hero-facts {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 1.25rem clamp(1.5rem, 4vw, 3.5rem);
+  margin-top: clamp(2.5rem, 5vw, 3.5rem);
+  padding-top: 2rem;
+  border-top: 1px solid var(--ink-deep-2);
+}
+.series-fact-head {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-stretch: 112%;
+  font-size: clamp(1.4rem, 2.4vw, 1.85rem);
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+  color: var(--white);
+}
+.series-fact-note { font-size: 0.9rem; color: rgba(255,255,255,0.58); margin-top: 0.3rem; }
+
+/* ---- Session chips: the time blocks on a clinic card ---- */
+.session-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 0.75rem;
+}
+.session-chip {
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  padding: 1rem;
+}
+.session-chip .session-label {
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--red-deep);
+}
+.session-chip .session-time { font-size: 1.02rem; font-weight: 700; color: var(--ink); margin-top: 0.3rem; }
+.session-chip .session-age { font-size: 0.86rem; color: var(--ink-3); margin-top: 0.15rem; }
+
+/* ---- Meta pills (status / place / scholarships open) ---- */
+.pill-row { display: flex; flex-wrap: wrap; gap: 0.5rem; }
+.pill {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.4rem 0.8rem;
+  border-radius: var(--radius-pill);
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  color: var(--ink-2);
+}
+.pill-red { background: var(--red); border-color: var(--red); color: var(--white); }
+
+/* ---- Choice cards: real radios and checkboxes, 44px minimum target ---- */
+.choice-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 0.75rem;
+}
+.choice-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.7rem;
+  min-height: 44px;
+  margin: 0;
+  padding: 1rem;
+  font-weight: 500;
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: border-color var(--dur-1) var(--ease), background var(--dur-1) var(--ease);
+}
+.choice-card:hover { border-color: var(--line-2); }
+.choice-card:has(input:checked) { border-color: var(--red); background: var(--red-soft); }
+.choice-card input {
+  width: auto;
+  flex: none;
+  min-width: 20px;
+  min-height: 20px;
+  margin: 0.15rem 0 0;
+  padding: 0;
+  accent-color: var(--red);
+}
+.choice-title { display: block; font-size: 1.02rem; font-weight: 700; color: var(--ink); }
+.choice-note { display: block; font-size: 0.9rem; color: var(--ink-2); margin-top: 0.1rem; }
+
+/* Pill-shaped checkbox, for the age groups a host club would take */
+.choice-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  min-height: 44px;
+  margin: 0;
+  padding: 0.5rem 1rem;
+  font-size: 0.98rem;
+  font-weight: 500;
+  color: var(--ink-2);
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  transition: border-color var(--dur-1) var(--ease), background var(--dur-1) var(--ease), color var(--dur-1) var(--ease);
+}
+.choice-pill:hover { border-color: var(--line-2); }
+.choice-pill:has(input:checked) { border-color: var(--red); background: var(--red-soft); color: var(--ink); }
+.choice-pill input { width: auto; min-width: 18px; min-height: 18px; margin: 0; padding: 0; accent-color: var(--red); }
+
+/* A single consent / attestation checkbox on its own row */
+.check-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.7rem;
+  min-height: 44px;
+  margin: 0;
+  font-size: 0.98rem;
+  font-weight: 500;
+  color: var(--ink-2);
+  cursor: pointer;
+}
+.check-row input {
+  width: auto;
+  flex: none;
+  min-width: 20px;
+  min-height: 20px;
+  margin: 0.2rem 0 0;
+  padding: 0;
+  accent-color: var(--red);
+}
+.check-box {
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-sm);
+  padding: 1.1rem;
+}
+.check-box-red { background: var(--red-soft); border-color: var(--red-line); }
+.check-box-red .check-row { color: var(--ink); }
+
+/* ---- Numbered step list ---- */
+.step-list { list-style: none; display: flex; flex-direction: column; gap: 1rem; }
+.step-list li { display: flex; gap: 0.8rem; font-size: 0.96rem; color: var(--ink-2); line-height: 1.6; }
+.step-num {
+  flex: none;
+  width: 26px; height: 26px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--radius-pill);
+  background: var(--red-soft);
+  color: var(--red-deep);
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 0.82rem;
+  line-height: 1;
+}
+
+/* ---- Form + sidebar shell shared by the two series forms ---- */
+.series-layout { display: flex; flex-wrap: wrap; gap: clamp(1.5rem, 3vw, 2.5rem); align-items: flex-start; }
+.series-main { flex: 999 1 540px; min-width: 0; }
+.series-aside { flex: 1 1 290px; min-width: 0; display: flex; flex-direction: column; gap: 1.25rem; }
+
+.series-form {
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: clamp(1.5rem, 3vw, 2.25rem);
+  box-shadow: var(--shadow-sm);
+  gap: 1.6rem;
+}
+.form-block { border: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 1.15rem; }
+.form-block legend { display: flex; align-items: center; gap: 0.6rem; padding: 0; }
+.form-legend {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+}
+.form-rule { border: none; border-top: 1px solid var(--line); margin: 0; }
+.form-row-2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.15rem; }
+.form-row-3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.15rem; }
+@media (max-width: 700px) {
+  .form-row-2, .form-row-3 { grid-template-columns: 1fr; }
+}
+.form-hint { font-size: 0.86rem; color: var(--ink-3); margin-top: 0.4rem; }
+.form-prompt { font-size: 0.85rem; font-weight: 600; color: var(--ink); margin-bottom: 0.6rem; }
+.form-submit-row { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem; }
+
+/* ---- Placeholder frames for flyers and recap photos not shot yet ---- */
+.esws-placeholder {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  text-align: center;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--ink-3);
+  background: var(--surface-2);
+  border: 1px dashed var(--line-2);
+  border-radius: var(--radius-sm);
+}
+
+/* ---- Clinic cards ---- */
+.clinic-feature {
+  display: flex;
+  flex-wrap: wrap;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+}
+.clinic-feature-media {
+  flex: 1 1 340px;
+  min-width: 0;
+  min-height: 320px;
+  border-right: 1px solid var(--line);
+  border-radius: 0;
+  border-top: 0; border-bottom: 0; border-left: 0;
+  border-style: solid;
+}
+.clinic-feature-body { flex: 1.25 1 420px; min-width: 0; padding: clamp(1.5rem, 3vw, 2.15rem); }
+@media (max-width: 760px) {
+  .clinic-feature-media { border-right: 0; border-bottom: 1px solid var(--line); min-height: 220px; }
+}
+
+.recap-card { padding: 0; overflow: hidden; }
+.recap-card-body { padding: 1.35rem; }
+.recap-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.1rem;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--line);
+}
+.recap-stats p { font-size: 0.88rem; color: var(--ink-2); }
+.recap-stats strong { color: var(--ink); }
+
+.gallery-strip { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 0.6rem; }
+.gallery-strip > * { aspect-ratio: 1 / 1; }
+@media (max-width: 700px) { .gallery-strip { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+
+/* ---- Two-door CTA pair ---- */
+.door-grid { display: flex; flex-wrap: wrap; gap: 1.25rem; }
+.door {
+  flex: 1 1 360px;
+  min-width: 0;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: clamp(1.75rem, 3vw, 2.25rem);
+  box-shadow: var(--shadow-sm);
+}
+.door-red { background: var(--red-soft); border-color: var(--red-line); box-shadow: none; }
+
+/* Nine nav items need every label on one line and a little less padding than
+   the eight-item bar did. Scoped above the menu-button breakpoint so the
+   mobile panel's own sizing is untouched. */
+@media (min-width: 1141px) {
+  .nav-links { gap: 0.2rem; }
+  .nav-links a { white-space: nowrap; padding: 0.5rem 0.62rem; }
+  .nav-donate { padding: 0.6rem 1rem !important; margin-left: 0.3rem; }
 }
