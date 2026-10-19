@@ -1374,19 +1374,17 @@ select {
   border-radius: var(--radius-sm);
 }
 
-/* ---- Series wordmark in the hero: sized to the lockup's ~16:10 ratio, so the placeholder
-       frame reserves exactly the space the exported PNG will occupy. ---- */
-.series-logo, .series-logo-slot {
-  width: min(320px, 72%);
-  aspect-ratio: 16 / 10;
+/* ---- Series wordmark in the hero. The supplied export is opaque on a pure-black ground
+       rather than transparent, so it is screened onto the dark band: screen leaves the
+       backdrop untouched wherever the source is black, which drops the rectangle without
+       needing an alpha channel, and barely touches the white and red artwork. ---- */
+.series-logo {
+  width: min(340px, 74%);
   height: auto;
+  aspect-ratio: 640 / 426;
+  object-fit: contain;
   margin-bottom: 1.75rem;
-}
-.series-logo { object-fit: contain; }
-.series-hero .esws-placeholder {
-  background: var(--ink-deep-2);
-  border-color: var(--line-dark);
-  color: rgba(255, 255, 255, 0.78);
+  mix-blend-mode: screen;
 }
 
 /* ---- Clinic cards ---- */
