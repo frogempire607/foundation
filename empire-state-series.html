@@ -124,6 +124,13 @@
 <!-- ===== HERO (one of this page's two dark moments; the footer is the other) ===== -->
 <section class="series-hero" id="main" tabindex="-1">
   <div class="series-hero-inner">
+    <!-- MISSING ASSET: images/esws/esws-logo.png — the Empire State Wrestling Series wordmark
+         (white/red grunge type over the New York state outline, with the "POWERED BY FROGEMPIRE
+         FOUNDATION INC" plate beneath). It is not on disk; it has to be exported from the flyer
+         source, ideally ~640x400 on transparency. Until then this frame holds its place. Swap it
+         for the <img> on the next line when the file lands. -->
+    <div class="esws-placeholder series-logo-slot" aria-hidden="true">Series logo — images/esws/esws-logo.png</div>
+    <!-- <img class="series-logo" src="images/esws/esws-logo.png" alt="Empire State Wrestling Series" width="640" height="400"> -->
     <div class="eyebrow">Frog Empire Foundation Presents</div>
     <h1 class="h-display">Building New York wrestling. <span class="text-red">Together.</span></h1>
     <p class="lead">A club-hosted clinic series bringing New York wrestlers together to get better. Host clubs choose the age group, the clinicians and the pricing — the Foundation handles the rest and funds the kids who can't cover it.</p>
@@ -158,8 +165,8 @@
 
     <!-- Clinician -->
     <div class="card" style="flex: 1 1 320px; min-width: 0;">
-      <!-- PLACEHOLDER: clinician photo — drop the export at images/esws/jaxon-joy.jpg and swap this frame for an <img> -->
-      <div class="esws-placeholder" style="height: 220px;" aria-hidden="true">Clinician photo — images/esws/jaxon-joy.jpg</div>
+      <img src="images/esws/jaxon-joy-2026-11-15.webp" alt="Empire State Wrestling Series flyer for the Jaxon Joy clinic. Clinician Jaxon Joy — 3x Ohio State Champ, Ivy League Champ, Cliff Keen Champ, NCAA Qualifier. Sunday November 15th. Session 1: 9am-10:30am. Session 2: 11am-1pm. Session 3: 2pm-3:30pm. Frog Empire Wrestling Academy, 40 Catherwood Rd, Ithaca, NY 14850. Ask info@frogempirefoundation.org for scholarship opportunities." width="1122" height="1402" loading="lazy"
+           style="width: 100%; height: auto; border-radius: var(--radius-sm); border: 1px solid var(--line);">
       <div class="eyebrow" style="margin-top: 1.4rem;">Clinician</div>
       <h3 style="font-family: var(--font-display); font-weight: 800; font-stretch: 112%; font-size: 1.75rem; letter-spacing: -0.02em; margin-bottom: 1rem;">Jaxon Joy</h3>
       <div class="pill-row">
@@ -179,29 +186,30 @@
         </div>
         <div>
           <div class="eyebrow" style="margin-bottom: 0.35rem;">Cost</div>
-          <!-- PLACEHOLDER: [PRICE] — per-session price, and whether all three sessions cost the same -->
-          <p style="font-size: 1.25rem; font-weight: 700; letter-spacing: -0.02em; color: var(--ink);">[PRICE PER SESSION]</p>
+          <!-- PRICING ($15/$50) — one of only two places the site states the price; the other is
+               the same block on empire-state-series-events.html. -->
+          <p style="font-size: 1.25rem; font-weight: 700; letter-spacing: -0.02em; color: var(--ink);">$15 state qualifiers · $50 all other wrestlers</p>
+        </div>
+        <div>
+          <div class="eyebrow" style="margin-bottom: 0.35rem;">Who It's For</div>
+          <p style="font-size: 1.25rem; font-weight: 700; letter-spacing: -0.02em; color: var(--ink);">Ages 10–18 · 2+ years experience</p>
         </div>
       </div>
 
       <div>
         <div class="eyebrow" style="margin-bottom: 0.75rem;">Sessions</div>
         <div class="session-grid">
-          <!-- PLACEHOLDER: [AGE GROUP] ×3 — which age group each session is for -->
           <div class="session-chip">
             <div class="session-label">Session 1</div>
             <div class="session-time">9:00 – 10:30 am</div>
-            <div class="session-age">[AGE GROUP]</div>
           </div>
           <div class="session-chip">
             <div class="session-label">Session 2</div>
             <div class="session-time">11:00 am – 1:00 pm</div>
-            <div class="session-age">[AGE GROUP]</div>
           </div>
           <div class="session-chip">
             <div class="session-label">Session 3</div>
             <div class="session-time">2:00 – 3:30 pm</div>
-            <div class="session-age">[AGE GROUP]</div>
           </div>
         </div>
       </div>
@@ -213,7 +221,7 @@
       </div>
 
       <div style="display: flex; flex-wrap: wrap; gap: 0.75rem; margin-top: auto;">
-        <a href="empire-state-series-events.html#nov-15-2026" class="btn btn-primary">Register</a>
+        <a href="https://form.jotform.com/Empire_Frog/empire-state-clinic-1" class="btn btn-primary" target="_blank" rel="noopener">Register</a>
         <a href="empire-state-series-scholarship.html" class="btn btn-ghost">Apply for a scholarship</a>
       </div>
     </div>

@@ -62,6 +62,24 @@
       "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
       "url": "https://frogempirefoundation.org/empire-state-series-events.html#nov-15-2026",
       "organizer": { "@id": "https://frogempirefoundation.org/#organization" },
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "State qualifiers",
+          "price": "15",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock",
+          "url": "https://form.jotform.com/Empire_Frog/empire-state-clinic-1"
+        },
+        {
+          "@type": "Offer",
+          "name": "All other wrestlers",
+          "price": "50",
+          "priceCurrency": "USD",
+          "availability": "https://schema.org/InStock",
+          "url": "https://form.jotform.com/Empire_Frog/empire-state-clinic-1"
+        }
+      ],
       "performer": { "@type": "Person", "name": "Jaxon Joy" },
       "location": {
         "@type": "Place",
@@ -129,45 +147,43 @@
   </div>
 
   <article class="clinic-feature" id="nov-15-2026">
-    <!-- PLACEHOLDER: clinic flyer — export to images/esws/2026-11-15-jaxon-joy.jpg and swap this frame for an <img> -->
-    <div class="esws-placeholder clinic-feature-media" aria-hidden="true">Flyer — images/esws/2026-11-15-jaxon-joy.jpg</div>
+    <div class="clinic-feature-media">
+      <img src="images/esws/jaxon-joy-2026-11-15.webp" alt="Empire State Wrestling Series flyer for the Jaxon Joy clinic. Clinician Jaxon Joy — 3x Ohio State Champ, Ivy League Champ, Cliff Keen Champ, NCAA Qualifier. Sunday November 15th. Session 1: 9am-10:30am. Session 2: 11am-1pm. Session 3: 2pm-3:30pm. Frog Empire Wrestling Academy, 40 Catherwood Rd, Ithaca, NY 14850. Ask info@frogempirefoundation.org for scholarship opportunities." width="1122" height="1402">
+    </div>
     <div class="clinic-feature-body">
       <div class="pill-row" style="margin-bottom: 1.1rem;">
         <span class="pill pill-red">Registration open</span>
         <span class="pill">Ithaca, NY</span>
         <span class="pill">Scholarships open</span>
+        <span class="pill">Ages 10–18 · 2+ yrs</span>
       </div>
       <p style="font-size: 0.95rem; font-weight: 700; color: var(--red-deep); margin-bottom: 0.35rem;">Sunday, November 15, 2026</p>
       <h3 style="font-family: var(--font-display); font-weight: 800; font-stretch: 112%; font-size: clamp(1.7rem, 3vw, 2rem); letter-spacing: -0.025em; line-height: 1.1; margin-bottom: 0.6rem;">Jaxon Joy Clinic</h3>
       <p style="color: var(--ink-2); margin-bottom: 1.4rem;">Hosted by Frog Empire Wrestling Academy · 40 Catherwood Rd, Ithaca, NY 14850</p>
 
-      <div class="session-grid" style="margin-bottom: 1.5rem;">
-        <!-- PLACEHOLDER: [AGE GROUP] ×3 — which age group each session is for -->
+      <div class="session-grid" style="margin-bottom: 1.25rem;">
         <div class="session-chip">
           <div class="session-label">Session 1</div>
           <div class="session-time">9:00 – 10:30 am</div>
-          <div class="session-age">[AGE GROUP]</div>
         </div>
         <div class="session-chip">
           <div class="session-label">Session 2</div>
           <div class="session-time">11:00 am – 1:00 pm</div>
-          <div class="session-age">[AGE GROUP]</div>
         </div>
         <div class="session-chip">
           <div class="session-label">Session 3</div>
           <div class="session-time">2:00 – 3:30 pm</div>
-          <div class="session-age">[AGE GROUP]</div>
         </div>
       </div>
 
+      <!-- PRICING ($15/$50) — one of only two places the site states the price; the other is the
+           Cost block on empire-state-series.html. -->
+      <p style="margin-bottom: 1.25rem; color: var(--ink-2);">Open to ages 10–18 with at least 2 years of wrestling experience. <strong style="color: var(--ink);">$15</strong> for state qualifiers, <strong style="color: var(--ink);">$50</strong> for all other wrestlers.</p>
+
       <div style="display: flex; flex-wrap: wrap; gap: 0.75rem;">
-        <!-- PLACEHOLDER: registration link + [PRICE] — point href at the Trackwrestling / Eventbrite / Netlify
-             registration URL and replace [PRICE] with the per-session price. Until then this anchors to the
-             note below so no one lands on a dead link. -->
-        <a href="#registration-note" class="btn btn-primary" aria-describedby="registration-note">Register — [PRICE]</a>
+        <a href="https://form.jotform.com/Empire_Frog/empire-state-clinic-1" class="btn btn-primary" target="_blank" rel="noopener">Register on JotForm</a>
         <a href="empire-state-series-scholarship.html" class="btn btn-ghost">Can't cover it? Apply here</a>
       </div>
-      <p class="form-hint" id="registration-note">[REGISTRATION LINK] isn't live yet — email <a href="mailto:info@frogempirefoundation.org" style="color: var(--red-deep); border-bottom: 1px solid var(--red-line);">info@frogempirefoundation.org</a> to hold a spot.</p>
     </div>
   </article>
 
@@ -190,75 +206,83 @@
 <section class="band reveal" style="border-block: 1px solid var(--line);">
   <div class="section">
     <h2 class="h-section">Past clinics</h2>
-    <p class="lead">Photos, recaps and the numbers from every room we've filled.</p>
-
-    <!-- PLACEHOLDER: past-clinic recaps — three cards stubbed out. Fill in date, clinician, host club,
-         the three counts, and the recap cover photo (images/esws/recap-<date>-cover.jpg) per clinic.
-         Delete any card you don't need; there are no past stops in the series yet. -->
-    <div class="card-grid">
-
-      <article class="card recap-card" id="recap-1">
-        <div class="esws-placeholder" style="height: 190px; border: 0; border-bottom: 1px dashed var(--line-2); border-radius: 0;" aria-hidden="true">Recap cover — images/esws/recap-1-cover.jpg</div>
-        <div class="recap-card-body">
-          <p style="font-size: 0.9rem; font-weight: 700; color: var(--red-deep); margin-bottom: 0.3rem;">[MONTH DAY, YEAR]</p>
-          <h3>[CLINICIAN] Clinic</h3>
-          <p>[HOST CLUB] · [CITY, NY]</p>
-          <div class="recap-stats">
-            <p><strong>[00]</strong> wrestlers</p>
-            <p><strong>[00]</strong> clubs</p>
-            <p><strong>[00]</strong> on scholarship</p>
-          </div>
-          <a href="#gallery-pattern" style="display: inline-block; margin-top: 1rem; font-size: 0.95rem; font-weight: 700; color: var(--red-deep); border-bottom: 1px solid var(--red-line);">See the photos →</a>
-        </div>
-      </article>
-
-      <article class="card recap-card" id="recap-2">
-        <div class="esws-placeholder" style="height: 190px; border: 0; border-bottom: 1px dashed var(--line-2); border-radius: 0;" aria-hidden="true">Recap cover — images/esws/recap-2-cover.jpg</div>
-        <div class="recap-card-body">
-          <p style="font-size: 0.9rem; font-weight: 700; color: var(--red-deep); margin-bottom: 0.3rem;">[MONTH DAY, YEAR]</p>
-          <h3>[CLINICIAN] Clinic</h3>
-          <p>[HOST CLUB] · [CITY, NY]</p>
-          <div class="recap-stats">
-            <p><strong>[00]</strong> wrestlers</p>
-            <p><strong>[00]</strong> clubs</p>
-            <p><strong>[00]</strong> on scholarship</p>
-          </div>
-          <a href="#gallery-pattern" style="display: inline-block; margin-top: 1rem; font-size: 0.95rem; font-weight: 700; color: var(--red-deep); border-bottom: 1px solid var(--red-line);">See the photos →</a>
-        </div>
-      </article>
-
-      <article class="card recap-card" id="recap-3">
-        <div class="esws-placeholder" style="height: 190px; border: 0; border-bottom: 1px dashed var(--line-2); border-radius: 0;" aria-hidden="true">Recap cover — images/esws/recap-3-cover.jpg</div>
-        <div class="recap-card-body">
-          <p style="font-size: 0.9rem; font-weight: 700; color: var(--red-deep); margin-bottom: 0.3rem;">[MONTH DAY, YEAR]</p>
-          <h3>[CLINICIAN] Clinic</h3>
-          <p>[HOST CLUB] · [CITY, NY]</p>
-          <div class="recap-stats">
-            <p><strong>[00]</strong> wrestlers</p>
-            <p><strong>[00]</strong> clubs</p>
-            <p><strong>[00]</strong> on scholarship</p>
-          </div>
-          <a href="#gallery-pattern" style="display: inline-block; margin-top: 1rem; font-size: 0.95rem; font-weight: 700; color: var(--red-deep); border-bottom: 1px solid var(--red-line);">See the photos →</a>
-        </div>
-      </article>
-
-    </div>
-
-    <div class="card" style="margin-top: 2.5rem;" id="gallery-pattern">
-      <div class="eyebrow">Recap Gallery</div>
-      <p style="color: var(--ink-2); margin-bottom: 1.25rem;">Each past clinic's photos live in a strip like this — 6 to 12 square crops, lazy-loaded from <code style="font-size: 0.9em;">images/esws/</code>.</p>
-      <!-- PLACEHOLDER: recap photos — replace each frame with <img src="images/esws/recap-1-01.jpg" alt="…" loading="lazy" width="600" height="600"> -->
-      <div class="gallery-strip">
-        <div class="esws-placeholder" aria-hidden="true"></div>
-        <div class="esws-placeholder" aria-hidden="true"></div>
-        <div class="esws-placeholder" aria-hidden="true"></div>
-        <div class="esws-placeholder" aria-hidden="true"></div>
-        <div class="esws-placeholder" aria-hidden="true"></div>
-        <div class="esws-placeholder" aria-hidden="true"></div>
-      </div>
+    <div class="card" style="max-width: 46rem;">
+      <h3>Coming soon</h3>
+      <p>The Jaxon Joy clinic on November 15 is the first stop on the series. Photos, recaps and the numbers from each room land here once it has run.</p>
     </div>
   </div>
 </section>
+
+<!-- Recap cards and the gallery strip are parked in the <template> below, which the browser does
+     not render. To switch the section on after November 15, 2026: delete the "Coming soon" card
+     above, move this markup back into that section, then fill in each card's date, clinician,
+     host club and counts and point the frames at the photos in images/esws/. -->
+<template id="esws-past-clinic-recaps">
+  <!-- PLACEHOLDER: past-clinic recaps — three cards stubbed out. Fill in date, clinician, host club,
+       the three counts, and the recap cover photo (images/esws/recap-<date>-cover.jpg) per clinic.
+       Delete any card you don't need; there are no past stops in the series yet. -->
+  <div class="card-grid">
+
+    <article class="card recap-card" id="recap-1">
+      <div class="esws-placeholder" style="height: 190px; border: 0; border-bottom: 1px dashed var(--line-2); border-radius: 0;" aria-hidden="true">Recap cover — images/esws/recap-1-cover.jpg</div>
+      <div class="recap-card-body">
+        <p style="font-size: 0.9rem; font-weight: 700; color: var(--red-deep); margin-bottom: 0.3rem;">[MONTH DAY, YEAR]</p>
+        <h3>[CLINICIAN] Clinic</h3>
+        <p>[HOST CLUB] · [CITY, NY]</p>
+        <div class="recap-stats">
+          <p><strong>[00]</strong> wrestlers</p>
+          <p><strong>[00]</strong> clubs</p>
+          <p><strong>[00]</strong> on scholarship</p>
+        </div>
+        <a href="#gallery-pattern" style="display: inline-block; margin-top: 1rem; font-size: 0.95rem; font-weight: 700; color: var(--red-deep); border-bottom: 1px solid var(--red-line);">See the photos →</a>
+      </div>
+    </article>
+
+    <article class="card recap-card" id="recap-2">
+      <div class="esws-placeholder" style="height: 190px; border: 0; border-bottom: 1px dashed var(--line-2); border-radius: 0;" aria-hidden="true">Recap cover — images/esws/recap-2-cover.jpg</div>
+      <div class="recap-card-body">
+        <p style="font-size: 0.9rem; font-weight: 700; color: var(--red-deep); margin-bottom: 0.3rem;">[MONTH DAY, YEAR]</p>
+        <h3>[CLINICIAN] Clinic</h3>
+        <p>[HOST CLUB] · [CITY, NY]</p>
+        <div class="recap-stats">
+          <p><strong>[00]</strong> wrestlers</p>
+          <p><strong>[00]</strong> clubs</p>
+          <p><strong>[00]</strong> on scholarship</p>
+        </div>
+        <a href="#gallery-pattern" style="display: inline-block; margin-top: 1rem; font-size: 0.95rem; font-weight: 700; color: var(--red-deep); border-bottom: 1px solid var(--red-line);">See the photos →</a>
+      </div>
+    </article>
+
+    <article class="card recap-card" id="recap-3">
+      <div class="esws-placeholder" style="height: 190px; border: 0; border-bottom: 1px dashed var(--line-2); border-radius: 0;" aria-hidden="true">Recap cover — images/esws/recap-3-cover.jpg</div>
+      <div class="recap-card-body">
+        <p style="font-size: 0.9rem; font-weight: 700; color: var(--red-deep); margin-bottom: 0.3rem;">[MONTH DAY, YEAR]</p>
+        <h3>[CLINICIAN] Clinic</h3>
+        <p>[HOST CLUB] · [CITY, NY]</p>
+        <div class="recap-stats">
+          <p><strong>[00]</strong> wrestlers</p>
+          <p><strong>[00]</strong> clubs</p>
+          <p><strong>[00]</strong> on scholarship</p>
+        </div>
+        <a href="#gallery-pattern" style="display: inline-block; margin-top: 1rem; font-size: 0.95rem; font-weight: 700; color: var(--red-deep); border-bottom: 1px solid var(--red-line);">See the photos →</a>
+      </div>
+    </article>
+
+  </div>
+
+  <div class="card" style="margin-top: 2.5rem;" id="gallery-pattern">
+    <div class="eyebrow">Recap Gallery</div>
+    <p style="color: var(--ink-2); margin-bottom: 1.25rem;">Each past clinic's photos live in a strip like this — 6 to 12 square crops, lazy-loaded from <code style="font-size: 0.9em;">images/esws/</code>.</p>
+    <!-- PLACEHOLDER: recap photos — replace each frame with <img src="images/esws/recap-1-01.jpg" alt="…" loading="lazy" width="600" height="600"> -->
+    <div class="gallery-strip">
+      <div class="esws-placeholder" aria-hidden="true"></div>
+      <div class="esws-placeholder" aria-hidden="true"></div>
+      <div class="esws-placeholder" aria-hidden="true"></div>
+      <div class="esws-placeholder" aria-hidden="true"></div>
+      <div class="esws-placeholder" aria-hidden="true"></div>
+      <div class="esws-placeholder" aria-hidden="true"></div>
+    </div>
+</template>
 
 <!-- ===== CTA ===== -->
 <section class="cta-banner reveal">

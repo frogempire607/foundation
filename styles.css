@@ -1206,7 +1206,6 @@ select {
   color: var(--red-deep);
 }
 .session-chip .session-time { font-size: 1.02rem; font-weight: 700; color: var(--ink); margin-top: 0.3rem; }
-.session-chip .session-age { font-size: 0.86rem; color: var(--ink-3); margin-top: 0.15rem; }
 
 /* ---- Meta pills (status / place / scholarships open) ---- */
 .pill-row { display: flex; flex-wrap: wrap; gap: 0.5rem; }
@@ -1375,6 +1374,21 @@ select {
   border-radius: var(--radius-sm);
 }
 
+/* ---- Series wordmark in the hero: sized to the lockup's ~16:10 ratio, so the placeholder
+       frame reserves exactly the space the exported PNG will occupy. ---- */
+.series-logo, .series-logo-slot {
+  width: min(320px, 72%);
+  aspect-ratio: 16 / 10;
+  height: auto;
+  margin-bottom: 1.75rem;
+}
+.series-logo { object-fit: contain; }
+.series-hero .esws-placeholder {
+  background: var(--ink-deep-2);
+  border-color: var(--line-dark);
+  color: rgba(255, 255, 255, 0.78);
+}
+
 /* ---- Clinic cards ---- */
 .clinic-feature {
   display: flex;
@@ -1390,13 +1404,14 @@ select {
   min-width: 0;
   min-height: 320px;
   border-right: 1px solid var(--line);
-  border-radius: 0;
-  border-top: 0; border-bottom: 0; border-left: 0;
-  border-style: solid;
+  background: var(--surface-2);
 }
+.clinic-feature-media img { width: 100%; height: 100%; object-fit: contain; }
 .clinic-feature-body { flex: 1.25 1 420px; min-width: 0; padding: clamp(1.5rem, 3vw, 2.15rem); }
 @media (max-width: 760px) {
-  .clinic-feature-media { border-right: 0; border-bottom: 1px solid var(--line); min-height: 220px; }
+  /* Stacked, the flyer sets its own height instead of being squashed into the panel. */
+  .clinic-feature-media { border-right: 0; border-bottom: 1px solid var(--line); min-height: 0; }
+  .clinic-feature-media img { height: auto; max-height: 80vh; }
 }
 
 .recap-card { padding: 0; overflow: hidden; }
