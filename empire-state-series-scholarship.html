@@ -122,26 +122,15 @@
         <!-- 1 · Which clinic -->
         <fieldset class="form-block">
           <legend><span class="step-num" aria-hidden="true">1</span><span class="form-legend">Which clinic</span></legend>
-          <div class="form-row-2">
-            <div class="form-group">
-              <label for="s-clinic">Clinic</label>
-              <select id="s-clinic" name="clinic" required>
-                <option value="">Select a clinic…</option>
-                <option>Jaxon Joy Clinic — Ithaca, Nov 15, 2026</option>
-                <!-- PLACEHOLDER: [NEXT CLINIC] — add an option per stop as hosts are confirmed -->
-                <option>[NEXT CLINIC]</option>
-              </select>
-            </div>
-            <div class="form-group">
-              <label for="s-session">Session</label>
-              <select id="s-session" name="session" required>
-                <option value="">Select a session…</option>
-                <option>Session 1 — 9:00–10:30 am</option>
-                <option>Session 2 — 11:00 am–1:00 pm</option>
-                <option>Session 3 — 2:00–3:30 pm</option>
-                <option>Whichever has room</option>
-              </select>
-            </div>
+          <div class="form-group">
+            <label for="s-clinic">Clinic</label>
+            <select id="s-clinic" name="clinic" required>
+              <option value="">Select a clinic…</option>
+              <option>Jaxon Joy Clinic — Ithaca, Nov 15, 2026</option>
+              <!-- PLACEHOLDER: [NEXT CLINIC] — add an option per stop as hosts are confirmed -->
+              <option>[NEXT CLINIC]</option>
+            </select>
+            <p class="form-hint">An award covers the clinic, not a single session. The host club sorts out which session your wrestler is in.</p>
           </div>
         </fieldset>
 
