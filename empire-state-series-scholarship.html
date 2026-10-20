@@ -34,7 +34,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,300..900&display=swap">
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="styles.css?v=2">
 
 <!-- ===== STRUCTURED DATA ===== -->
 <script type="application/ld+json">
@@ -115,6 +115,7 @@
     <!-- ===== FORM ===== -->
     <div class="series-main">
       <form name="esws-scholarship" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thanks.html" class="series-form">
+        <p class="form-note">Everything is required unless marked optional. Takes about ten minutes.</p>
         <input type="hidden" name="form-name" value="esws-scholarship">
         <p class="hidden-honeypot" aria-hidden="true"><label>Don't fill this out if you're human: <input name="bot-field" autocomplete="off" tabindex="-1"></label></p>
 
@@ -156,7 +157,8 @@
             </div>
             <div class="form-group">
               <label for="s-grade">Age and grade</label>
-              <input id="s-grade" type="text" name="wrestler-age-grade" placeholder="e.g. 12, 7th grade" required>
+              <input id="s-grade" type="text" name="wrestler-age-grade" placeholder="12, 7th grade" required>
+              <p class="form-hint">Clinics are open to ages 10 to 18.</p>
             </div>
             <div class="form-group">
               <label for="s-club">Club or school team</label>
@@ -164,7 +166,7 @@
             </div>
             <div class="form-group">
               <label for="s-years">Years wrestling</label>
-              <input id="s-years" type="text" name="wrestler-years" placeholder="e.g. 3" required>
+              <input id="s-years" class="input-num" type="number" name="wrestler-years" inputmode="numeric" min="0" max="25" step="1" placeholder="3" required>
             </div>
           </div>
         </fieldset>
@@ -223,7 +225,7 @@
           </div>
 
           <div class="form-group">
-            <label for="s-other">Other help you're already getting (optional)</label>
+            <label for="s-other">Other help you're already getting <span class="optional">Optional</span></label>
             <input id="s-other" type="text" name="other-assistance" placeholder="e.g. club dues waived, a prior Foundation scholarship">
           </div>
         </fieldset>
@@ -237,20 +239,20 @@
           <div class="form-row-3">
             <div class="form-group">
               <label for="s-cname">Coach's first name</label>
-              <input id="s-cname" type="text" name="coach-first-name" required>
+              <input id="s-cname" type="text" name="coach-first-name" autocomplete="off" required>
             </div>
             <div class="form-group">
               <label for="s-cphone">Coach's phone</label>
-              <input id="s-cphone" type="tel" name="coach-phone" required>
+              <input id="s-cphone" type="tel" name="coach-phone" inputmode="tel" autocomplete="off" required>
             </div>
             <div class="form-group">
               <label for="s-cemail">Coach's email</label>
-              <input id="s-cemail" type="email" name="coach-email" required>
+              <input id="s-cemail" type="email" name="coach-email" autocomplete="off" required>
             </div>
           </div>
           <div class="form-group">
             <label for="s-cclub">Coach's club or school</label>
-            <input id="s-cclub" type="text" name="coach-club" required>
+            <input id="s-cclub" type="text" name="coach-club" autocomplete="off" required>
           </div>
           <div class="check-box check-box-red">
             <label class="check-row" for="s-coach-told">
@@ -359,6 +361,6 @@
   </div>
 </footer>
 
-<script src="main.js"></script>
+<script src="main.js?v=2"></script>
 </body>
 </html>

@@ -36,3 +36,36 @@ const observer = new IntersectionObserver((entries) => {
 }, { threshold: 0.12, rootMargin: '0px 0px -50px 0px' });
 
 document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// Guard against double submission. Netlify Forms posts the real <form>, so the
+// data still goes with it; disabling the button only stops a second POST from a
+// double tap on a slow connection. Validation failures never lock the form.
+document.querySelectorAll('form[name]').forEach((form) => {
+  const button = form.querySelector('[type="submit"]');
+  form.addEventListener('submit', (event) => {
+    if (form.dataset.submitting === 'true') {
+      event.preventDefault();
+      return;
+    }
+    if (typeof form.checkValidity === 'function' && !form.checkValidity()) return;
+    form.dataset.submitting = 'true';
+    if (button) {
+      button.dataset.idleLabel = button.textContent;
+      button.textContent = 'Sending…';
+      button.setAttribute('aria-busy', 'true');
+      // Disable after the event loop turn so the click isn't cancelled mid-submit.
+      setTimeout(() => { button.disabled = true; }, 0);
+    }
+  });
+
+  // Coming back via the back button restores the page from bfcache with the
+  // button still disabled. Reset it so the form is usable again.
+  window.addEventListener('pageshow', () => {
+    delete form.dataset.submitting;
+    if (button) {
+      button.disabled = false;
+      button.removeAttribute('aria-busy');
+      if (button.dataset.idleLabel) button.textContent = button.dataset.idleLabel;
+    }
+  });
+});

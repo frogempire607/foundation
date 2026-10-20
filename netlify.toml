@@ -6,22 +6,27 @@
 [build]
   publish = "."
 
-# ---- Long-cache immutable static assets (images, css, js) ----
-# Safe because these are content-addressed by deploy; bust by renaming on change.
-[[headers]]
-  for = "/images/*"
-  [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
-
+# ---- Static assets ----
+# styles.css and main.js keep FIXED filenames, so "immutable" was wrong: it told
+# every browser to pin whatever copy it had for a year and never revalidate.
+# Returning visitors kept old CSS against new HTML and saw an unstyled page.
+# ETag revalidation instead: a 304 costs one tiny round trip and is always correct.
 [[headers]]
   for = "/*.css"
   [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
+    Cache-Control = "public, max-age=0, must-revalidate"
 
 [[headers]]
   for = "/*.js"
   [headers.values]
-    Cache-Control = "public, max-age=31536000, immutable"
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+# Images also have fixed names, but they change rarely and are the heavy ones.
+# An hour of freshness, then revalidate.
+[[headers]]
+  for = "/images/*"
+  [headers.values]
+    Cache-Control = "public, max-age=3600, must-revalidate"
 
 # ---- HTML: always revalidate so content edits go live immediately ----
 [[headers]]

@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!-- ===== PRIMARY SEO ===== -->
 <title>Host a Wrestling Clinic at Your Club | Empire State Series</title>
-<meta name="description" content="Any New York wrestling club, school program, or youth team can host a stop on the Empire State Wrestling Series. You set the age group, clinicians, and pricing — send an inquiry.">
+<meta name="description" content="Any New York wrestling club, school program or youth team can host a stop on the Empire State Wrestling Series. You set the age group, clinicians and pricing. 75% of registration stays with your club.">
 <link rel="canonical" href="https://frogempirefoundation.org/empire-state-series-host.html">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
 <meta name="theme-color" content="#b31b1b">
@@ -16,7 +16,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Frog Empire Foundation">
 <meta property="og:title" content="Host a clinic at your club — Empire State Wrestling Series">
-<meta property="og:description" content="You keep the registration revenue. We bring the clinician, the flyer, and the scholarship money. Open to any New York club.">
+<meta property="og:description" content="75% of registration stays with your club. We help you organize the event and put it on the series calendar. Open to any New York club.")
 <meta property="og:url" content="https://frogempirefoundation.org/empire-state-series-host.html">
 <meta property="og:image" content="https://frogempirefoundation.org/images/og-default.jpg">
 <meta property="og:image:width" content="1200">
@@ -24,7 +24,7 @@
 <meta property="og:locale" content="en_US">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Host a clinic at your club — Empire State Wrestling Series">
-<meta name="twitter:description" content="You keep the registration revenue. We bring the clinician, the flyer, and the scholarship money.">
+<meta name="twitter:description" content="75% of registration stays with your club. We help you organize the event and put it on the series calendar.">
 <meta name="twitter:image" content="https://frogempirefoundation.org/images/og-default.jpg">
 
 <!-- ===== ICONS / MANIFEST / FONTS ===== -->
@@ -34,7 +34,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@100..125,300..900&display=swap">
-<link rel="stylesheet" href="styles.css">
+<link rel="stylesheet" href="styles.css?v=2">
 
 <!-- ===== STRUCTURED DATA ===== -->
 <script type="application/ld+json">
@@ -100,7 +100,7 @@
   <div class="page-header-inner">
     <div class="eyebrow"><span><a href="empire-state-series.html" style="color: inherit; border-bottom: 1px solid var(--red-line);">Empire State Wrestling Series</a> · For Coaches</span></div>
     <h1 class="h-display">Host a clinic<br>at your <span class="text-red">club</span>.</h1>
-    <p class="lead" style="margin-top: 1rem;">This is an inquiry, not a commitment. Tell us the basics and we'll come back with clinician options and dates that work.</p>
+    <p class="lead" style="margin-top: 1rem;">This is an expression of interest, not a commitment. Tell us about your club and the dates you have in mind. We will check the series calendar and come back to you within 2 business days.</p>
   </div>
 </section>
 
@@ -110,6 +110,7 @@
     <!-- ===== FORM ===== -->
     <div class="series-main">
       <form name="esws-host-inquiry" method="POST" data-netlify="true" netlify-honeypot="bot-field" action="/thanks.html" class="series-form">
+        <p class="form-note">Everything is required unless marked optional. Takes about three minutes.</p>
         <input type="hidden" name="form-name" value="esws-host-inquiry">
         <p class="hidden-honeypot" aria-hidden="true"><label>Don't fill this out if you're human: <input name="bot-field" autocomplete="off" tabindex="-1"></label></p>
 
@@ -153,8 +154,8 @@
               <input id="h-mats" type="text" name="mat-space" placeholder="e.g. 2 full mats, wrestling room" required>
             </div>
             <div class="form-group">
-              <label for="h-cap">Wrestlers you could fit</label>
-              <input id="h-cap" type="text" name="capacity" placeholder="e.g. 60 per session" required>
+              <label for="h-cap">Wrestlers you could fit per session</label>
+              <input id="h-cap" class="input-num" type="number" name="capacity" inputmode="numeric" min="1" max="2000" step="1" placeholder="60" required>
             </div>
           </div>
         </fieldset>
@@ -193,13 +194,13 @@
           </div>
 
           <div class="form-group">
-            <label for="h-clinician">Clinicians you'd want (optional)</label>
-            <input id="h-clinician" type="text" name="clinician-request" placeholder="A name, a college program, or leave it to us">
-            <p class="form-hint">We'll suggest options either way.</p>
+            <label for="h-clinician">Clinicians you have in mind <span class="optional">Optional</span></label>
+            <input id="h-clinician" type="text" name="clinician-request" placeholder="A name, a college program, or leave blank">
+            <p class="form-hint">Clinician arrangements are coordinated between your club and the Foundation during planning. Your club books and pays the clinician from its 75% share.</p>
           </div>
 
           <div class="form-group">
-            <label for="h-notes">Anything else we should know</label>
+            <label for="h-notes">Anything else we should know <span class="optional">Optional</span></label>
             <textarea id="h-notes" name="notes" rows="5" placeholder="Budget range, past clinics you've run, how many clubs you can pull in…"></textarea>
           </div>
         </fieldset>
@@ -223,15 +224,23 @@
       <div class="card">
         <h3>What hosting gets you</h3>
         <ul class="step-list" style="margin-top: 1rem;">
-          <li><span class="step-num" aria-hidden="true">1</span><span>You keep the registration revenue.</span></li>
-          <li><span class="step-num" aria-hidden="true">2</span><span>We help book and vet the clinician.</span></li>
+          <li><span class="step-num" aria-hidden="true">1</span><span>75% of registration stays with your club.</span></li>
+          <li><span class="step-num" aria-hidden="true">2</span><span>You choose your clinicians and pay them from your share.</span></li>
           <li><span class="step-num" aria-hidden="true">3</span><span>Flyer, event page and promotion across the series.</span></li>
-          <li><span class="step-num" aria-hidden="true">4</span><span>Scholarship money so no kid in your room is priced out.</span></li>
+          <li><span class="step-num" aria-hidden="true">4</span><span>The Foundation's 25% funds scholarships, so cost does not keep a wrestler off your mat.</span></li>
         </ul>
       </div>
       <div class="card" style="background: var(--red-soft); border-color: var(--red-line); box-shadow: none;">
         <h3>You set the terms</h3>
-        <p>Age group, clinicians and pricing are the host club's call — every time.</p>
+        <p>Age group, clinicians and pricing are the host club's call, every time.</p>
+      </div>
+      <div class="card">
+        <h3>The split</h3>
+        <div class="split-bar is-stacked" role="img" aria-label="Registration split: 75 percent to the host club, 25 percent to the scholarship fund.">
+          <span class="split-bar-club" style="flex: 75;"><b>75%</b> Club</span>
+          <span class="split-bar-fund" style="flex: 25;"><b>25%</b> Fund</span>
+        </div>
+        <p>Your 75% covers your clinicians and the cost of the day. Our 25% is restricted to wrestling scholarships, not general revenue.</p>
       </div>
       <div class="card">
         <h3>Rather talk first?</h3>
@@ -287,6 +296,6 @@
   </div>
 </footer>
 
-<script src="main.js"></script>
+<script src="main.js?v=2"></script>
 </body>
 </html>

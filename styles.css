@@ -72,7 +72,7 @@
 
   /* ---- Layout ---- */
   --max-width: 1240px;
-  --gutter: clamp(1.25rem, 5vw, 4.5rem);
+  --gutter: clamp(1.5rem, 5vw, 4.5rem);
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -604,7 +604,7 @@ img { max-width: 100%; display: block; }
   max-width: var(--max-width);
   margin: 0 auto;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(190px, 100%), 1fr));
   gap: clamp(1.5rem, 3vw, 2.5rem);
   position: relative;
 }
@@ -635,7 +635,7 @@ img { max-width: 100%; display: block; }
 
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(270px, 100%), 1fr));
   gap: 1.25rem;
   margin-top: 2.5rem;
 }
@@ -797,7 +797,7 @@ img { max-width: 100%; display: block; }
 
 .tiers {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(265px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(265px, 100%), 1fr));
   gap: 1.25rem;
   margin-top: 2.5rem;
 }
@@ -911,7 +911,7 @@ img { max-width: 100%; display: block; }
 
 .team-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(290px, 100%), 1fr));
   gap: 1.5rem;
   margin-top: 2.5rem;
 }
@@ -1170,7 +1170,7 @@ select {
 
 .series-hero-facts {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(210px, 100%), 1fr));
   gap: 1.25rem clamp(1.5rem, 4vw, 3.5rem);
   margin-top: clamp(2.5rem, 5vw, 3.5rem);
   padding-top: 2rem;
@@ -1190,7 +1190,7 @@ select {
 /* ---- Session chips: the time blocks on a clinic card ---- */
 .session-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(150px, 100%), 1fr));
   gap: 0.75rem;
 }
 .session-chip {
@@ -1227,7 +1227,7 @@ select {
 /* ---- Choice cards: real radios and checkboxes, 44px minimum target ---- */
 .choice-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
   gap: 0.75rem;
 }
 .choice-card {
@@ -1449,4 +1449,141 @@ select {
   .nav-links { gap: 0.2rem; }
   .nav-links a { white-space: nowrap; padding: 0.5rem 0.62rem; }
   .nav-donate { padding: 0.6rem 1rem !important; margin-left: 0.3rem; }
+}
+
+/* ========================================================================
+   EMPIRE STATE SERIES — form craft, the 75/25 split, small-screen fit
+   Continuation of the block above. Everything here is additive.
+   ======================================================================== */
+
+/* ---- Wordmark in the nav: keep it on one line where there's room, and
+        shrink the badge on narrow phones so the bar doesn't get tall. ---- */
+@media (min-width: 1141px) {
+  .nav-logo span { white-space: nowrap; }
+}
+@media (max-width: 420px) {
+  .nav-logo { gap: 0.55rem; font-size: 0.82rem; }
+  .nav-logo img { height: 44px; width: 44px; }
+}
+
+/* ---- Short numeric answers read as short fields, and get a number pad.
+        The spinners are hidden: they're a desktop-only affordance that
+        makes the control look unfinished next to the text inputs. ---- */
+.input-num { max-width: 9rem; }
+.series-form input[type="number"] {
+  appearance: textfield;
+  -moz-appearance: textfield;
+}
+.series-form input[type="number"]::-webkit-outer-spin-button,
+.series-form input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* ---- Validation. :user-invalid only matches after someone has interacted
+        with the field or tried to submit, so nothing is red on arrival. ---- */
+.series-form :is(input, select, textarea):user-invalid {
+  border-color: var(--red);
+  box-shadow: 0 0 0 3px var(--red-soft);
+}
+.series-form .choice-card:has(input:user-invalid),
+.series-form .check-box:has(input:user-invalid) {
+  border-color: var(--red);
+  background: var(--red-soft);
+}
+
+/* ---- Telling people what's optional beats starring what isn't ---- */
+.optional {
+  display: inline-block;
+  margin-left: 0.4rem;
+  padding: 0.1rem 0.45rem;
+  font-family: var(--font-accent);
+  font-size: 0.68rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--ink-3);
+  background: var(--surface-2);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-pill);
+  vertical-align: 0.08em;
+}
+.form-note {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--ink-3);
+}
+
+/* ---- The 75/25 split, shown rather than asserted ---- */
+.split-note {
+  margin-top: clamp(1.75rem, 4vw, 2.75rem);
+  padding: clamp(1.4rem, 3vw, 2rem);
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+}
+.split-note h3 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.1rem;
+  letter-spacing: -0.015em;
+  color: var(--ink);
+  margin-bottom: 1rem;
+}
+.split-note p {
+  max-width: 72ch;
+  margin-top: 1rem;
+  font-size: 0.98rem;
+  line-height: 1.62;
+  color: var(--ink-2);
+}
+
+.split-bar { display: flex; gap: 3px; width: 100%; }
+.split-bar span {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0 0.4rem;
+  min-width: 0;
+  padding: 0.75rem 0.9rem;
+  font-size: 0.85rem;
+  line-height: 1.3;
+}
+.split-bar b {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-stretch: 112%;
+  font-size: 1.1rem;
+  letter-spacing: -0.02em;
+  color: var(--white);
+}
+.split-bar-club {
+  background: var(--ink-deep);
+  color: rgba(255, 255, 255, 0.74);
+  border-radius: var(--radius-sm) 0 0 var(--radius-sm);
+}
+.split-bar-fund {
+  background: var(--red);
+  color: rgba(255, 255, 255, 0.88);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+}
+/* A narrow column can't hold two labels side by side; stack instead of squeezing.
+   .is-stacked opts in regardless of viewport, for the sidebar card. */
+.split-bar.is-stacked { flex-direction: column; }
+.split-bar.is-stacked span { flex: none !important; }
+.split-bar.is-stacked .split-bar-club { border-radius: var(--radius-sm) var(--radius-sm) 0 0; }
+.split-bar.is-stacked .split-bar-fund { border-radius: 0 0 var(--radius-sm) var(--radius-sm); }
+
+@media (max-width: 560px) {
+  .split-bar { flex-direction: column; }
+  .split-bar span { flex: none !important; }
+  .split-bar-club { border-radius: var(--radius-sm) var(--radius-sm) 0 0; }
+  .split-bar-fund { border-radius: 0 0 var(--radius-sm) var(--radius-sm); }
+}
+
+/* Narrow phones: give the form card back some of the width the page gutter took. */
+@media (max-width: 520px) {
+  .series-form { padding: 1.15rem; }
+  .check-box { padding: 0.9rem; }
 }
